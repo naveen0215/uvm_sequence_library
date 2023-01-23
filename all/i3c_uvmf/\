@@ -1,0 +1,36 @@
+uvmf:
+  environments:
+    "env":
+      agents:
+        - name: "m_agent"
+          type: "i3c_m"
+          initiator_responder: "INITIATOR"
+        - name: "s_agent"
+          type: "i3c_s"
+          initiator_responder: "INITIATOR"
+        
+
+      config_vars:
+        - name: "has_scoreboard"
+          type: "bit"
+          value: "1'b1"
+      # - name: "has_virtual_sequencer"
+      #   type: "bit"
+      #   value: "1'b1"
+        - name: "no_of_masters"
+          type: "int"
+          #value: "1'b1"
+        - name: "no_of_slaves"
+          type: "int"
+          #value: "1'b1"
+      
+            
+      analysis_components:
+      - name: "i3c_sb"
+        type: "i3c_scoreboard"
+
+      tlm_connenctions:
+      - driver: "i3c_"
+
+
+
